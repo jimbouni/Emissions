@@ -3,7 +3,7 @@
 	header("Content-type:application/json");
 	
 	//Connect to db 
-	$pgsqlOptions = "host='localhost' dbname='geog5871' user='geog5871student' password='Geibeu9b'";
+	$pgsqlOptions = "host='localhost' dbname='xxxxx' user='gxxxxxx' password='xxxxx'";
 	$dbconn = pg_connect($pgsqlOptions) or die ("connection failure");
 
 	// Define SQL query
