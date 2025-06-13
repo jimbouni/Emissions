@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+
+<head>
+<!--This section contains the Title of the map, links to script and links to stylesheets associated with the webpage-->
+	<title>UK Emissions Map</title>
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> <!--This is a link to the Leaflet JS library-->
+	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><!-- Script from the jQuery library from google-->
+	<script language="javascript" type="text/javascript" src="script.js"></script><!--calls local javascript to cativate fetch data-->
+	<script type="text/javascript" src="map_setup.js"></script>
+	<script type="text/javascript" src="jscoord-1.1.1.js"></script>
+	<script type="text/javascript" src="emissions.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"> <!--This is a link to the Leaflet stylesheet-->
+	<link rel="stylesheet" media="all" href="map_style.css" type="text/css"><!--link to personal css style sheet-->
+	<img id="image" src="climate.jpg" alt="Image">
+	
+</head>
+
+<!--this is the header section-->
+<header>
+	<h1>Understanding UK Emissions</h1><!--the heading of the paragraph-->
+</header>
+
+<!-- This section contains all content including the map, text, etc-->
+<body >	
+	<section>
+	
+		<h1>UK Emissions and Climate Change</h1>
+		<p>“Era of global boiling has arrived,’ says UN chief as July set to be hottest month on record” - The Guardian, 2023 </p>
+		
+		<p>“COP28: How this year shattered nearly every modern climate record” - Newscientist, 2023 </p>
+		
+		<p>“Scientists warn dangerous levels of heat will threaten two billion people” - Independent, 2023</p>
+		
+		<h2>Climate Change</h2>
+		
+		<p>Climate change is a pressing global issue with far reaching consequences and it demands our immediate attention.</p>
+		
+		<p>“Climate change is real. It is happening right now, it is the most urgent threat facing our entire species and we need to work collectively together and stop procrastinating.” - Leonardo Di Caprio, Actor & Environmentalist </p>
+		
+		<p>“I’ve starred in a lot of science fiction movies and, let me tell you something, climate change is not science fiction. This is a battle in the real world, it is impacting us right now.” - Arnold Schwarzenegger, Actor & Former Governor of California</p>
+		
+		<p> According to the Intergovernmental Panel on Climate Change (IPCC), the warming of the planet can be attributed to human activities such as deforestation, the burning of fossil fuels, and industrial processes. Changes, such as rising temperatures, extreme weather events, and the melting ice caps, have severe impacts on the population. The World Health Organization (WHO) emphasizes the health risks associated with climate change, not overlooking the potential for conflicts over dwindling resources. Addressing climate change is imperative for environmental and socio-economic stability. In an effort to preserve livelihoods, there is an urgent need to transition into sustainable practices, with a focus on reducing global emissions.</p>
+		
+		<h3>Emissions</h3>
+		<p>Reducing global emissions is paramount in mitigating the catastrophic impacts of climate change, as echoed by numerous experts.
+		Accurate emissions data is crucial for formulating effective policies, with the Global Carbon Project stressing the need for transparent and reliable information to track progress and identify areas for improvement. 
+		GHG emissions’ data are fundamental for the mitigation of climate change, It helps to identify the main sources of climatic changes and investigate causal mechanisms, and to monitor progress toward achieving agreed targets. (Busch,et.al, 2023)</p>
+		
+		<p>Emissions data  is statistics regarding the release of Green House Gases (GHG) and other pollutants into the atmosphere. Understanding emissions plays a vital role in tracking an addressing climate change. </p>
+		
+		<p> The Emissions data provided on the site is for Carbon dioxide and do not consider any other emissions. This serves to highlight emissions within the UK as to help in the decision making process when identifying sites for Carbon Capture and Storage.
+		
+		<p> <b>Carbon Capture and storage </b> helps to break the link between economic gwoth and carbon emissions as it involves capturing Carbon dioxide (CO2) Emissions produced from power generation and other industrial operations before it enters the atmosphere, and storing the CO2 underground. This has the ability to reduce GHG emissions and aid in the fight against climate change.
+		This technology plays a pivotal role in achieving global climate goals by allowing for the continued use of fossil fuels while minimizing their environmental impact. It is an integral part of the comprehensive strategy required to transition to a low-carbon future and combat the adverse effects of climate change.</p>
+		
+		<h1>UK Emissions Data Map</h1>
+		
+		<!--The map will appear in this div-->
+		<div id="map" style = 'height: 700px;'></div> <!--defines a container in a webpage in this case a map and a set the height of the container-->
+		
+		<p>data source from https://naei.beis.gov.uk/, accesed december 2023, the data is based on 2021 corporate Emissions</p>
+		
+		<p> From the map it can be seen that emissions is distributed throughout the UK with a large cluster in the Hull, East Yorkshire areas. The emissions in this area vary from a number of sectors but the highest emitter is power industry. On a larger scale (UK in its entirety, The major emitters is from the power industry. The question begs to ask what is the power industry is doing to minimise their carbon emissions. Is carbon capture and storage a potential solution?</p>
+		
+		<p> The aim of this tool is to identify major emitters, and with further development including data such as geology, infrastructure, socio- economic factors, identify optimatal sites for carbon capture and storage to reduce the emissions from the various industries.</p>
+		<p> It provides insights into the carbon emissions and the ability for the UK to meet its Carbon emissions reduction goals, and do so sustainably.
+	
+		<p>Use the following button to load emissions of 10000 tonnes and more.</p>
+	
+	<div class = "wrapper"><!--creates division container with the class wrapper-->
+		<button onclick = 'fetchData()'>Fetch Data</button> <!-- creates a button linked to the javascript function fectData()-->
+		<button onclick = 'clearData()'>Clear Data</button><!-- creates a button linked to the javascript function fectData()-->
+		<br /><br /><!--insert two line breaks for spacing-->
+		<div id = 'textWrap'></div><!-- used to display data/print results of request to server i.e fetched data)-->
+	</div>
+	
+		<h1>Reference</h1>
+		<!--Creates an ordered list (ol) i.e. applies numbers and put data in list form-->
+		<ol>
+			<li>U.S. Environmental Protection Agency (EPA). (n.d.). Global Greenhouse Gas Emissions Data. [Online] Available at: https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data [Accessed: 1 December 2023]</li>
+			
+			<li>Anon. (2023). Scientists declare July the world's hottest month on record. [Online] The Guardian. Available at: https://www.theguardian.com/science/2023/jul/27/scientists-july-world-hottest-month-record-climate-temperatures [Accessed: 1 December 2023]</li>
+			
+			<li>Busch, A., et al. (2023). Corporate Greenhouse Gas Emissions’ Data and the Urgent Need for a Science-Led Just Transition: Introduction to a Thematic Symposium. [Online] Springer. Available at: https://link.springer.com/article/10.1007/s10551-022-05288-7 [Accessed: 1 December 2023]</li>
+			
+			<li>Anon (2023) Scientists warn of heatwave threat as global warming leads to temperature rise. [Online] The Independent. Available at: https://www.independent.co.uk/climate-change/news/heatwave-global-warming-temperature-rise-b2343066.html [Accessed: 1 December 2023]</li>
+
+			<li>Institute of Environmental Management and Assessment (IEMA). (n.d.). Assessing Greenhouse Gas Emissions and Evaluating Their Significance. [Online] Available at: https://www.iema.net/preview-document/assessing-greenhouse-gas-emissions-and-evaluating-their-significance [Accessed: 1 December 2023]</li>
+
+			<li>Vieira, A., et al. (2022). From Carbon Dependence to Renewables: The European Oil Majors' Strategies to Face Climate Change. [Online] Wiley Online Library. Available at: https://onlinelibrary.wiley.com/doi/full/10.1002/bse.3185 [Accessed: 1 December 2023]</li>
+
+			<li>Ritchie, H., & Roser, M. (n.d.). CO2 emissions. [Online] Our World in Data. Available at: https://ourworldindata.org/co2-emissions [Accessed: 1 December 2023]</li>
+
+			<li>Anon (2017, Updated 2023). What are Carbon Emissions (and why do they matter?) [Online] EarthHero. Available at: https://earthhero.com/blogs/blog/carbon-emissions [Accessed: 1 December 2023]</li>
+
+			<li>World Economic Forum. (n.d.). Carbon Emissions: Net Zero and Global Warming. [Online] Available at: https://www.weforum.org/agenda/2020/09/carbon-emissions-net-zero-global-warming-climate-change/ [Accessed: 1 December 2023]</li>
+
+			<li>WWF UK. (n.d.). Reducing Carbon Emissions in the UK. [Online] Available at: https://www.wwf.org.uk/what-we-do/projects/reducing-carbon-emissions-uk [Accessed: 1 December 2023]</li>
+
+			<li>LSE Grantham Institute. (2023). Why is net zero so important in the fight against climate change? [Online] Available at: https://www.lse.ac.uk/granthaminstitute/explainers/why-is-net-zero-so-important-in-the-fight-against-climate-change/ [Accessed: 1 December 2023]</li>
+
+			<li>[Bing Image Search Result Page. [Online] Bing Image Search. Available at: climate change - Bing][Accessed: 1 December 2023]</li>
+
+		</ol>	
+	</section>
+</body>
+
+

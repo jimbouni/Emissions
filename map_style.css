@@ -1,0 +1,91 @@
+/*sets the html window*/
+html { 
+	height: 100%;/*sets the height*/
+	width: 100%;/*sets the width*/
+}
+
+/*styles the body in the html doc*/
+body { 
+	font-family: 'Calibri', sans-serif;/*sets the font style*/
+	color:white;/*sets the font color*/
+	text-align: justify;/*sets the font alignment*/
+    margin: 2px;/*sets the margin*/
+    padding: 0px;/*sets the font padding*/
+    background-color: black;/*sets the background color*/
+}
+
+/*styles the header*/
+header {
+    background-color: #333;/*sets the header color*/
+    color: white;/*sets the font colour in the header*/
+    padding: 10px;/*sets the header padding size*/
+    text-align: center;/*sets the alignment of text in the header*/
+}
+
+/*style image*/
+#image {
+    width: 100%;/*sets the image width*/
+    height: 300px;/*sets the image height*/
+    display: block;/*sets the image*/
+    margin: 0 auto;/*sets the image margin*/
+}
+
+
+/*style map window*/
+.gmap {
+	margin: auto;/*sets the map margin*/
+    border: 2px solid #ccc;;/*sets the map border*/
+}
+
+/*styles emission table*/
+.emission-table {
+		font-family: Arial, Helvetica, sans-serif;/*sets the table font*/
+		border-collapse: collapse;
+		width: 100%;
+}
+
+.emissions-table td, .emissions-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+/*sets the table header parameters*/
+.emissions-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: Blue;
+  color: white;
+}
+
+.emissions-table tr:nth-child(even) {
+  background-color: Grey;/*set background colour of rows*/
+}
+
+.emissions-table tr:nth-child(odd) {
+  background-color: Black; /*set background colour of rows*/
+}
+.emissions-table tr:hover {
+  background-color: #ddd;/*set backgroun colour of rows*/
+}
+
+/* Style the Leaflet popup */
+.leaflet-popup-content-wrapper {
+    background-color: white; /* Set the overall background color to white */
+    border: 2px solid #337ab7; /* Set a border color (dark blue) */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+.leaflet-popup-content {
+    color: black; /* Set the text color */
+    padding: 10px; /* Add padding for the content */
+}
+
+/* Style the header in the Leaflet popup */
+.leaflet-popup-content h1 {
+    background-color: #337ab7; /* Set the header background color to dark blue */
+    color: white; /* Set the header text color to white */
+    margin: 0; /* Remove any default margin */
+    padding: 10px; /* Add padding to the header */
+    border-radius: 0; /* Remove rounded corners for the header */
+}
+
